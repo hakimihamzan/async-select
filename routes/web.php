@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,5 +25,9 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
+    })->name('dashboard');
+
+    Route::post('/dashboard', function (Request $request) {
+        dd($request->all());
     })->name('dashboard');
 });
