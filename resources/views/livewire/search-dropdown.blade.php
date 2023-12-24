@@ -21,7 +21,14 @@
 
         <div class="w-full">
             @foreach ($results as $result)
-                <div class="hover:bg-slate-50 mb-2 p-2 cursor-pointer" data-id="{{ $result->id }}"  data-name="{{ $result->name }}" wire:click="setInput('{{ $result->id }}', '{{ $result->name }}')">{{ $result->name }}</div>
+                <div
+                    class="hover:bg-slate-50 mb-2 p-2 cursor-pointer"
+                    data-id="{{ $result->id }}"
+                    data-name="{{ $result->name }}"
+                    wire:click="setInput('{{ $result->id }}', '{{ $result->name }}')"
+                    @click="open = false">
+                    {{ $result->name }}
+                </div>
             @endforeach
         </div>
     </div>
